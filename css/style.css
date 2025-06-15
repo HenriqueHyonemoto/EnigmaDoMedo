@@ -86,7 +86,7 @@ img {
   }
 }
 
-/* Responsividade */
+
 @media (max-width: 600px) {
   .card {
     font-size: 1rem;
