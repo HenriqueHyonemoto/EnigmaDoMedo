@@ -1,24 +1,24 @@
- *{
+* {
   margin: 0;
   padding: 0;  
 }
-html{
-  font-family: Poppins;
+
+html {
+  font-family: Poppins, sans-serif;
   color: #f0f0f0;
 }
-body{
+
+body {
   min-height: 100vh;
   background: black;
   color: #a2a5b3;
-}
-h1{
-  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 @font-face {
   font-family: 'Sigilos';
   src: url('../font/OrdemParanormalSigilos.ttf') format('truetype');
-
 }
 
 h1 {
@@ -26,10 +26,17 @@ h1 {
   color: white;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .card {
   display: block;
   width: max-content;
-  margin: 2em auto; /* Centraliza horizontalmente */
+  margin: 2em auto;
   padding: 0.8em 1.6em;
   background: black;
   color: white;
@@ -42,18 +49,15 @@ h1 {
   transition: transform 0.2s;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-}
 
-@property --angle{
+
+@property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-.card::after, .card::before{
+.card::after, .card::before {
   content: '';
   position: absolute;
   height: 100%;
@@ -67,17 +71,25 @@ img {
   border-radius: 10px;
   animation: 3s spin linear infinite;
 }
-.card::before{
+
+.card::before {
   filter: blur(1.5rem);
   opacity: 0.5;
 }
-@keyframes spin{
-  from{
+
+@keyframes spin {
+  from {
     --angle: 0deg;
   }
-  to{
+  to {
     --angle: 360deg;
   }
 }
- 
 
+/* Responsividade */
+@media (max-width: 600px) {
+  .card {
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+  }
+}
