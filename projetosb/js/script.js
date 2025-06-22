@@ -1,5 +1,5 @@
 const audio = document.createElement('audio');
-audio.src = 'sound/memoriatimoris.mp3';
+audio.src = '../sound/lodo.mp3';
 audio.type = 'audio/mpeg';
 audio.loop = true;
 audio.autoplay = true;
