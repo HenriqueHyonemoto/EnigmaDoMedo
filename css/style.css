@@ -49,6 +49,22 @@ img {
   transition: transform 0.2s;
 }
 
+.card2 {
+  display: block;
+  width: max-content;
+  margin: 2em auto;
+  padding: 0.4em 0.4em;
+  background: black;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
 
 
 @property --angle {
@@ -72,11 +88,30 @@ img {
   animation: 3s spin linear infinite;
 }
 
+.card2::after, .card2::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ff0000, #ff0000, #ff0000, #000000, #000000);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
 .card::before {
   filter: blur(1.5rem);
   opacity: 0.5;
 }
 
+.card2::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
 @keyframes spin {
   from {
     --angle: 0deg;
@@ -92,4 +127,13 @@ img {
     font-size: 1rem;
     padding: 0.6em 1.2em;
   }
+  .card2 {
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+  }
+}
+
+a{
+  color:white;
+text-decoration: none;
 }
